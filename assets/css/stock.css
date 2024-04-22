@@ -1,0 +1,331 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
+#Dashboard{
+    display: none;
+}
+:root {
+    --button-bg: rgb(12, 161, 12);
+    --button-bg2: rgb(27, 104, 204);
+    --button-bg3: rgb(95, 93, 93);
+    --button-text-color: #fff;
+    --baby-blue: #f8faff;
+}
+#set-image-box {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border: 2px dashed #ccc;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.content-bg{
+    margin: 10px 30px;
+    padding: 30px 0 50px 70px;
+    border-radius: 20px;
+    background-color: #F6F6F9;
+
+}
+#imageInput_items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#set-image-box:hover {
+    border-color: #666;
+}
+#set-barcode-box {
+    width: 400px;
+    height: 200px;
+    border: 2px solid #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #3498db;
+    text-align: center;
+}
+#stock-txt-wrapper,#stock-box-wrapper,#stock-btn-wrppper{
+    padding: 0 50px 50px 50px;
+}
+#stock-btn-wrppper{
+    display: flex;
+    justify-content: end;
+}
+.container-txt{
+    position: relative;
+    margin-bottom: 30px;
+}
+.container-txt:last-child{
+    margin-bottom: 0;
+}
+.inputBox{
+    position: relative;
+}
+.inputBox input{
+    position: relative;
+    padding: 8px 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.2s;
+    letter-spacing: 0.05em;
+    z-index: 2;
+}
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 10px 0;
+    pointer-events: none;
+    font-size: 1em;
+    transition: 0.5s;
+    letter-spacing: 0.05em;
+    color: #333;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span{
+    font-size: 0.85em;
+    transform: translateY(-32px);
+}
+.inputBox i{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #333;
+    background: #3498db;
+    transition: 0.5s;
+    z-index: 1;
+    border-radius: 4px;
+    pointer-events: none;
+}
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i{
+    height: 100%;
+}
+.bubbly-button {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    display: inline-block;
+    font-size: 1em;
+    width: 80px;
+    height: 35px;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+    box-shadow: 0 2px 25px rgba(12, 161, 12, 0.5);
+    margin-right: 15px;
+    z-index: 2;
+}
+.bubbly-button:nth-child(2) {
+    background-color: var(--button-bg2);
+    box-shadow: 0 2px 25px rgba(27, 104, 204, 0.5);
+}
+
+.bubbly-button:nth-child(3) {
+    background-color: var(--button-bg3);
+    box-shadow: 0 2px 25px rgba(95, 93, 93, 0.5);
+}
+
+.bubbly-button:focus {
+    outline: 0;
+}
+
+.bubbly-button:before,
+.bubbly-button:after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 140%;
+    height: 100%;
+    left: -20%;
+    z-index: -1000;
+    transition: all ease-in-out 0.5s;
+    background-repeat: no-repeat;
+}
+
+.bubbly-button:before {
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, var(--button-bg) 20%, transparent 30%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, var(--button-bg) 15%, transparent 20%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:nth-child(2):before {
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, var(--button-bg2) 20%, transparent 30%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, var(--button-bg2) 15%, transparent 20%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:nth-child(3):before {
+    display: none;
+    top: -75%;
+    background-image: radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, transparent 20%, var(--button-bg3) 20%, transparent 30%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, var(--button-bg3) 15%, transparent 20%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+.bubbly-button:after {
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, var(--button-bg) 15%, transparent 20%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg) 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:nth-child(2):after {
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, var(--button-bg2) 15%, transparent 20%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg2) 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:nth-child(3):after {
+    display: none;
+    bottom: -75%;
+    background-image: radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, transparent 10%, var(--button-bg3) 15%, transparent 20%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%),
+    radial-gradient(circle, var(--button-bg3) 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+.bubbly-button:active {
+    transform: scale(0.9);
+    background-color: darken(var(--button-bg), 5%);
+    box-shadow: 0 2px 25px rgba(12, 161, 12, 0.2);
+}
+.bubbly-button:nth-child(2):active {
+    transform: scale(0.9);
+    background-color: darken(var(--button-bg2), 5%);
+    box-shadow: 0 2px 25px rgba(27, 104, 204, 0.5);
+}
+
+.bubbly-button:nth-child(3):active {
+    transform: scale(0.9);
+    background-color: darken(var(--button-bg3), 5%);
+    box-shadow: 0 2px 25px rgba(95, 93, 93, 0.5);
+}
+.bubbly-button.animate:before {
+    display: block;
+    animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.bubbly-button.animate:after {
+    display: block;
+    animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+    0% {
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+    }
+    50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+    }
+    100% {
+        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+@keyframes bottomBubbles {
+    0% {
+        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+    }
+    50% {
+        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+    }
+    100% {
+        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+/* table  */
+#stock-table-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form-control.form-control-sm{
+    background-color: #EEEEEE;
+    border-radius: 20px;
+}
+.form-control.form-control-sm:focus{
+    outline: none;
+}
+
+table.dataTable>tbody>tr:hover{
+    cursor: pointer;
+    background-color: rgba(112, 13, 13, 0.64);
+}
+#toggle-bar {
+    cursor: pointer;
+    width: 95%;
+    height: 50px;
+    border: 1px solid red;
+}
+
+#toggle-bar:hover {
+    background-color: red;
+}
+
+#toggle-bar-content-wrapper {
+    border: 1px solid red;
+    width: 95%;
+    overflow: hidden;
+}
+
+.expand {
+    height: 600px;
+}
