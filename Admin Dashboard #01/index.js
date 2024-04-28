@@ -36,12 +36,41 @@ toggler.addEventListener('change', function () {
 });
 let circle = document.querySelector(".color-option");
 
-circle.addEventListener("click", (e)=>{
-    let target = e.target;
-    if(target.classList.contains("circle")){
-        circle.querySelector(".active").classList.remove("active");
-        target.classList.add("active");
-        document.querySelector(".main-images .active").classList.remove("active");
-        document.querySelector(`.main-images .${target.id}`).classList.add("active");
-    }
+// circle.addEventListener("click", (e)=>{
+//     let target = e.target;
+//     if(target.classList.contains("circle")){
+//         circle.querySelector(".active").classList.remove("active");
+//         target.classList.add("active");
+//         document.querySelector(".main-images .active").classList.remove("active");
+//         document.querySelector(`.main-images .${target.id}`).classList.add("active");
+//     }
+// });
+$('#employee-btn').on('click', function () {
+    console.log('clicked');
+
+    console.log($('.analytics, .planning, .bottom-data'));
+    $('.analytics, .planning, .bottom-data').css("display" , "none");
 });
+
+
+
+// $('#dashboard').css('display','block');
+// $('#employee-form').css('display','none');
+
+// $('.sidebar>a').eq(0).on('click', () => {
+//     // $('#dashboard').css('display','block');
+//     $('#employee-form').css('display','none');
+
+// })
+
+
+// $('.sidebar>a').eq(2).on('click', () => {
+//     $('#dashboard').css('display','none');
+//     $('#employee-form').css('display','block');
+//
+// })
+// $('.sidebar>a').eq(3).on('click', () => {
+//     $('#dashboard').css('display','none');
+//     $('#employee-form').css('display','none');
+//
+// })
